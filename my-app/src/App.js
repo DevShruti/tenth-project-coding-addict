@@ -10,6 +10,7 @@ function App() {
   const [alert, setAlert] = useState({show:false, msg:'', type:''})
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log('hello')
   }
   return (
     <section className="section-center">
@@ -17,7 +18,12 @@ function App() {
         {alert.show && <Alert/>}
         <h3>Grocery Bud</h3>
         <div className ="form-control">
-          <input type="text"/>
+          <input type="text" 
+          className ="grocery"
+           placeholder = "e.g. eggs" 
+           value ={name} 
+           onChange ={(e) => setName(e.target.value)}
+           />
           <button type="submit" className ="submit-btn">
             {isEditing ? 'edit' : 'submit'}
           </button>
