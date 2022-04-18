@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useState , useEffect} from 'react'
 import List from './List'
 import Alert from './Alert'
 
 function App() {
+  const [name, setName] = useState('')
+  const [list, setList] = useState([])
+  const [isEditing, setIsEditing] = useState(false)
+  const [editID, setEditID] = useState(null)
+  const [alert, setAlert] = useState({show:false, msg:'', type:''})
   return (
-    <h2>Grocery Bud Setup</h2>
+    <section className="section-center"></section>>
   )
 }
 
