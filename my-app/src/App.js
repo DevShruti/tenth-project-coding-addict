@@ -14,7 +14,14 @@ function App() {
       // display alert
       showAlert(true, 'Please Enter Value' , 'danger')
     } else if(name && isEditing){
-      // deal with edit
+      setList(
+        list.map((item) => {
+          if(item.id === editID){
+            return {...item , title : name}
+          }
+          return item
+        })
+      )
     } else {
       showAlert(true, 'Item Added to the List', 'success')
       const newItem = {id : new Date().getTime().toString(), title: name}
